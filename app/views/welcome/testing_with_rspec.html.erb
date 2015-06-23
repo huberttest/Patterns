@@ -1,0 +1,64 @@
+<div class="container">
+  <h1>Testing with RSpec</h1>
+  <hr>
+  <table>
+    <tr>
+   	  <td>
+   	  	<p><h3>Migrate to test database for RSpec:</h3></p>
+   	  	<p>Possibly just make a command alias in your .bashrc file.<br>
+   	  	~/.bashrc<br>
+   	  	alias rake_db_migrate='<b>rake db:migrate db:test:prepare</b>'<br>
+   	  	in terminal: rake_db_migrate</p>
+   	  </td>
+    </tr>
+  </table>
+<a href="http://courseware.codeschool.com.s3.amazonaws.com/testing_with_rspec_slides.pdf">http://courseware.codeschool.com.s3.amazonaws.com/testing_with_rspec_slides.pdf</a>
+
+<div class="code">
+<br>
+  describe Zombie do<br>
+  it 'is invalid without a name' do<br>
+    zombie = Zombie.new<br>
+    zombie.should_not be_valid<br>
+  end<br>
+<br>
+  it "has  name that matches 'Ash Clone'" do<br>
+    zombie = Zombie.new(name: 'Ash Clone 1')<br>
+    zombie.name.should match(/Ash Clone \d/)<br>
+  end<br>
+<br>
+  it 'changes the number of Zombies' do<br>
+    zombie = Zombie.new(name: 'Ash')<br>
+    expect { zombie.save }.to change { Zombie.count }.by(1)<br>
+  end<br>
+<br>
+  it 'changes the number of Zombies - second method' do<br>
+    zombie = Zombie.new(name: 'Ash')<br>
+    expect { zombie.save }. to change {Zombie.count}.from(0).to(1)<br>
+  end<br>
+<br>
+  it 'raises an error if saved without a name' do<br>
+    zombie = Zombie.new<br>
+    expect { zombie.save! }.to raise_error(ActiveRecord::RecordInvalid)<br>
+  end<br>
+<br>
+  it 'responds to respond_test_method' do<br>
+    zombie = Zombie.new<br>
+    zombie.respond_to?(:respond_test_method)<br>
+  end<br>
+<br>
+######DRY######<br>
+<br>
+  it 'responds to respond_test_method second method' do<br>
+    subject.should respond_to(:respond_test_method)<br>
+  end<br>
+<br>
+  it 'responds to respond_test_method third method' do<br>
+    should respond_to(:respond_test_method)<br>
+  end<br>
+<br>
+  it { should respond_to(:respond_test_method) }<br>
+<br>
+  its(:name) { should == nil }<br>
+<br>
+</div>

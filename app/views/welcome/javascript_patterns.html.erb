@@ -1,0 +1,167 @@
+<div class="container">
+  <h1>JavaScript Patterns</h1>
+  <hr>
+  <table>
+   <tr>
+   	 <td>
+   	   <p><button type="button" onclick="show_body()">Click me to show body</button></p>
+   	 </td>
+   </tr>
+    <tr>
+  	  <td>
+        <p id="change_text">JavaScript can change HTML content.</p>
+        <p><button type="button" onclick="change_text()">Click Me!</button></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	<p><button type="button" onclick="get_date()">Click me to display Date and Time.</button>
+		<div id="get_date"></div></p>
+      </td>
+    </tr>
+	<tr>
+	  <td>
+	  	<p><img id="my_image" onclick="change_image()" src="http://www.w3schools.com/js/pic_bulboff.gif" width="100" height="180"></p>
+		<p>Click the light bulb to turn on/off the light.</p>
+      </td>
+	</tr>
+    <tr>
+      <td>
+		<p>Please input a number between 1 and 10:</p>
+		<input id="validate_data" type="number">
+		<button type="button" onclick="validate_data()">Submit</button>
+		<p id="validate_text"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	<p><button type="button" onclick="window_alert()">Click me to show window alert.</button></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	<p id="sample_text_to_locate">Please locate where 'locate' occurs!.</p>
+      	<p><button type="button" onclick="where_locate()">Click to locate!</button></p>
+      	<p id="show_where_is_locate_text"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	<p>The pop(push) method removes(adds) the last element from an array.</p>
+      	<p id="fruits"></p>
+      	<p><button type="button" onclick="pop()">Click to pop fruits!</button></p>
+      	<p><button type="button" onclick="push()">Click to add fruits!</button></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	<p><button onclick="click_button_and_confirm()">Click button and confirm</button></p>
+      	<p id="button_and_confirm"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	<p><button onclick="click_button_prompt()">Click button to test prompt</button></p>
+      	<p id="button_prompt"></p>
+      </td>
+    </tr>
+  </table>
+  <a href="https://github.com/airbnb/javascript/blob/master/README.md">https://github.com/airbnb/javascript/blob/master/README.md</a>
+
+
+<div class="code">
+<br>
+function show_body() {<br>
+  alert(document.body.innerHTML);<br>
+}<br>
+<br>
+<br>
+function change_text() {<br>
+  var x = document.getElementById('change_text')<br>
+  x.style.fontSize = "25px";<br>
+  x.style.color = "green";<br>
+  x.innerHTML = "Hello JavaScript";<br>
+}<br>
+<br>
+function get_date() {<br>
+  document.getElementById('get_date').innerHTML = Date()<br>
+}<br>
+<br>
+function change_image() {<br>
+  var image = document.getElementById('my_image');<br>
+  if (image.src.match("bulbon")) {<br>
+    image.src = "http://www.w3schools.com/js/pic_bulboff.gif";<br>
+  } else {<br>
+    image.src = "http://www.w3schools.com/js/pic_bulbon.gif";<br>
+  }<br>
+}<br>
+<br>
+function validate_data() {<br>
+  var x, text;<br>
+  x = document.getElementById("validate_data").value;<br>
+  if (isNaN(x) || x < 1 || x > 10) {<br>
+  text = "Input not valid";<br>
+  } else {<br>
+  text = "Input OK";<br>
+  }<br>
+  document.getElementById("validate_text").innerHTML = text;<br>
+}<br>
+<br>
+function window_alert() {<br>
+  window.alert("It works!");<br>
+}<br>
+<br>
+function where_locate() {<br>
+  var str = document.getElementById("sample_text_to_locate").innerHTML;<br>
+  var pos = str.search("locate");<br>
+  document.getElementById("show_where_is_locate_text").innerHTML = pos;<br>
+}<br>
+<br>
+var fruits = ["Banana", " Orange", " Apple", " Mango"];<br>
+<br>
+window.onload = downScripts;<br>
+<br>
+function downScripts() {<br>
+  document.getElementById("fruits").innerHTML = fruits;<br>
+}<br>
+<br>
+function pop() {<br>
+  fruits.pop();<br>
+  document.getElementById("fruits").innerHTML = fruits;<br>
+}<br>
+<br>
+function push() {<br>
+  fruits.push(" Fruit");<br>
+  document.getElementById("fruits").innerHTML = fruits;<br>
+}<br>
+<br>
+function click_button_and_confirm() {<br>
+    var x;<br>
+    if (confirm("Press a button!") == true) {<br>
+        x = "You pressed OK!";<br>
+    } else {<br>
+        x = "You pressed Cancel!";<br>
+    }<br>
+    document.getElementById("button_and_confirm").innerHTML = x;<br>
+}<br>
+<br>
+function click_button_prompt() {<br>
+    var person = prompt("Please enter your name", "Harry Potter");<br>
+<br>
+    if (person != null) {<br>
+        document.getElementById("button_prompt").innerHTML =<br>
+        "Hello " + person + "! How are you today?";<br>
+    }<br>
+}<br>
+<br>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
