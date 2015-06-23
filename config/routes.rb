@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'welcome/testing_with_rspec'
   get 'welcome/prepare_to_talk'
 
-  root 'welcome#prepare_to_talk'
+  root 'welcome#testing_with_rspec'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

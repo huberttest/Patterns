@@ -67,101 +67,104 @@
     </tr>
   </table>
   <a href="https://github.com/airbnb/javascript/blob/master/README.md">https://github.com/airbnb/javascript/blob/master/README.md</a>
+  <p><%= link_to "RSpec", welcome_testing_with_rspec_path %></p>
 
 
 <div class="code">
-<br>
-function show_body() {<br>
-  alert(document.body.innerHTML);<br>
-}<br>
-<br>
-<br>
-function change_text() {<br>
-  var x = document.getElementById('change_text')<br>
-  x.style.fontSize = "25px";<br>
-  x.style.color = "green";<br>
-  x.innerHTML = "Hello JavaScript";<br>
-}<br>
-<br>
-function get_date() {<br>
-  document.getElementById('get_date').innerHTML = Date()<br>
-}<br>
-<br>
-function change_image() {<br>
-  var image = document.getElementById('my_image');<br>
-  if (image.src.match("bulbon")) {<br>
-    image.src = "http://www.w3schools.com/js/pic_bulboff.gif";<br>
-  } else {<br>
-    image.src = "http://www.w3schools.com/js/pic_bulbon.gif";<br>
-  }<br>
-}<br>
-<br>
-function validate_data() {<br>
-  var x, text;<br>
-  x = document.getElementById("validate_data").value;<br>
-  if (isNaN(x) || x < 1 || x > 10) {<br>
-  text = "Input not valid";<br>
-  } else {<br>
-  text = "Input OK";<br>
-  }<br>
-  document.getElementById("validate_text").innerHTML = text;<br>
-}<br>
-<br>
-function window_alert() {<br>
-  window.alert("It works!");<br>
-}<br>
-<br>
-function where_locate() {<br>
-  var str = document.getElementById("sample_text_to_locate").innerHTML;<br>
-  var pos = str.search("locate");<br>
-  document.getElementById("show_where_is_locate_text").innerHTML = pos;<br>
-}<br>
-<br>
-var fruits = ["Banana", " Orange", " Apple", " Mango"];<br>
-<br>
-window.onload = downScripts;<br>
-<br>
-function downScripts() {<br>
-  document.getElementById("fruits").innerHTML = fruits;<br>
-}<br>
-<br>
-function pop() {<br>
-  fruits.pop();<br>
-  document.getElementById("fruits").innerHTML = fruits;<br>
-}<br>
-<br>
-function push() {<br>
-  fruits.push(" Fruit");<br>
-  document.getElementById("fruits").innerHTML = fruits;<br>
-}<br>
-<br>
-function click_button_and_confirm() {<br>
-    var x;<br>
-    if (confirm("Press a button!") == true) {<br>
-        x = "You pressed OK!";<br>
-    } else {<br>
-        x = "You pressed Cancel!";<br>
-    }<br>
-    document.getElementById("button_and_confirm").innerHTML = x;<br>
-}<br>
-<br>
-function click_button_prompt() {<br>
-    var person = prompt("Please enter your name", "Harry Potter");<br>
-<br>
-    if (person != null) {<br>
-        document.getElementById("button_prompt").innerHTML =<br>
-        "Hello " + person + "! How are you today?";<br>
-    }<br>
-}<br>
-<br>
+<pre>
+function show_body() {
+  alert(document.body.innerHTML);
+}
 
+
+function change_text() {
+  var x = document.getElementById('change_text')
+  x.style.fontSize = "25px";
+  x.style.color = "green";
+  x.innerHTML = "Hello JavaScript";
+}
+
+
+function get_date() {
+  document.getElementById('get_date').innerHTML = Date()
+}
+
+
+function change_image() {
+  var image = document.getElementById('my_image');
+  if (image.src.match("bulbon")) {
+    image.src = "http://www.w3schools.com/js/pic_bulboff.gif";
+  } else {
+    image.src = "http://www.w3schools.com/js/pic_bulbon.gif";
+  }
+}
+
+
+function validate_data() {
+  var x, text;
+  x = document.getElementById("validate_data").value;
+  if (isNaN(x) || x < 1 || x > 10) {
+  text = "Input not valid";
+  } else {
+  text = "Input OK";
+  }
+  document.getElementById("validate_text").innerHTML = text;
+}
+
+
+function window_alert() {
+  window.alert("It works!");
+}
+
+
+function where_locate() {
+  var str = document.getElementById("sample_text_to_locate").innerHTML;
+  var pos = str.search("locate");
+  document.getElementById("show_where_is_locate_text").innerHTML = pos;
+}
+
+
+var fruits = ["Banana", " Orange", " Apple", " Mango"];
+
+window.onload = downScripts;
+
+function downScripts() {
+  document.getElementById("fruits").innerHTML = fruits;
+}
+
+
+function pop() {
+  fruits.pop();
+  document.getElementById("fruits").innerHTML = fruits;
+}
+
+
+function push() {
+  fruits.push(" Fruit");
+  document.getElementById("fruits").innerHTML = fruits;
+}
+
+
+function click_button_and_confirm() {
+    var x;
+    if (confirm("Press a button!") == true) {
+        x = "You pressed OK!";
+    } else {
+        x = "You pressed Cancel!";
+    }
+    document.getElementById("button_and_confirm").innerHTML = x;
+}
+
+
+function click_button_prompt() {
+    var person = prompt("Please enter your name", "Harry Potter");
+
+    if (person != null) {
+        document.getElementById("button_prompt").innerHTML =
+        "Hello " + person + "! How are you today?";
+    }
+}
+</pre>
 </div>
-
-
-
-
-
-
-
 </div>
 
